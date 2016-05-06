@@ -8,6 +8,8 @@ module.exports = {
   env: {
     'es6': true
   },
+  'ecmaFeatures': {
+  }
   parserOptions: {
     ecmaFeatures: {
       'jsx': true
