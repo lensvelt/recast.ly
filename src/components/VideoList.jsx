@@ -1,12 +1,15 @@
 
 
-var VideoList = () => (
+var VideoList = (prop) => (
   <div className="video-list media">
-    <VideoListEntry
-      title={window.exampleVideoData[0].snippet.title}
-      description={window.exampleVideoData[0].snippet.description}
-      thumbnailUrl={window.exampleVideoData[0].snippet.thumbnails.default.url}
-    />
+    {prop.videos.map((video) => (
+
+      <VideoListEntry
+        video={video}
+      />
+    
+    ))}
+
   </div>
 );
 
