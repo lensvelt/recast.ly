@@ -2,15 +2,11 @@
 
 var VideoList = () => (
   <div className="video-list media">
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
+    <VideoListEntry
+      title={window.exampleVideoData[0].snippet.title}
+      description={window.exampleVideoData[0].snippet.description}
+      thumbnailUrl={window.exampleVideoData[0].snippet.thumbnails.default.url}
+    />
   </div>
 );
 
