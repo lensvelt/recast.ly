@@ -5,7 +5,7 @@ var VideoList = (props) => (
     {props.videos.map((video) => (
 
       <VideoListEntry
-        video={video} changeVideoMethod={props.changeVideoMethod} 
+        video={video} onPlay={props.onPlay} 
       />
     
     ))}

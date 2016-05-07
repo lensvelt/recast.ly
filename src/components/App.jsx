@@ -5,10 +5,10 @@ class App extends React.Component {
     this.state = {
       currentVideo: window.exampleVideoData[0]
     };
+    console.log('constructor', this);
   }
-  changeVideo(newVideo) {
-    console.log(newVideo, this);
-    this.setState('currentVideo', newVideo);
+  onPlay(video) {
+    this.setState({'currentVideo': video});
   }
   // getInitialState () {
   //   return {
@@ -23,7 +23,7 @@ class App extends React.Component {
           <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={window.exampleVideoData} changeVideoMethod={this.changeVideo} />
+          <VideoList videos={window.exampleVideoData} onPlay={this.onPlay.bind(this)} />
         </div>
       </div>
     );
