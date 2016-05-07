@@ -1,11 +1,11 @@
 
 
-var VideoList = (prop) => (
+var VideoList = (props) => (
   <div className="video-list media">
-    {prop.videos.map((video) => (
+    {props.videos.map((video) => (
 
       <VideoListEntry
-        video={video}
+        video={video} changeVideoMethod={props.changeVideoMethod} 
       />
     
     ))}
