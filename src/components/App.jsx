@@ -3,16 +3,16 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      currentVideo: window.exampleVideoData[0],
-      searchResults: window.exampleVideoData
+      currentVideo: {id: {}, snippet: {thumbnails: {medium: {}}}},
+      searchResults: []
     };
-    console.log('constructor', this);
+    this.onSearch('');
   }
   onPlay(video) {
     this.setState({'currentVideo': video});
   }
-  onSearch(event) {
-    window.searchYouTube({q: event.target.value, maxResults: 5}, (results) => this.setState({'searchResults': results.items, 'currentVideo': results.items[0]}));
+  onSearch(query) {
+    window.searchYouTube({query: query, max: 5, key: window.YOUTUBE_API_KEY}, (results) => this.setState({'searchResults': results, 'currentVideo': results[0]}));
   }
 
   render () {
